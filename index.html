@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>KATAGAWA</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<style>
+  /* Style the previous and next carousel buttons */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: #000; /* Set a dark background color */
+  border-radius: 50%; /* Make the icon background round */
+  width: 40px;
+  height: 40px;
+}
+
+
+/* Make the buttons more visible */
+.carousel-control-prev, .carousel-control-next {
+  z-index: 1; /* Ensure they are on top of the images */
+}
+
+/* Optional: Add custom arrows */
+.carousel-control-prev-icon::after {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.carousel-control-next-icon::after {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+  /* Make the header sticky on top */
+  #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    /* Ensure it stays on top of other content */
+    background-color: white;
+    /* Optional: change to any background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional: add some shadow for better visibility */
+  }
+
+  /* Add padding to the body or main content to prevent it from being covered by the fixed header */
+  body {
+    padding-top: 80px;
+    /* Adjust based on the height of your header */
+  }
+
+  /* Styling improvements */
+  .service-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  section#services {
+    background-color: #f8f9fa;
+  }
+
+  .service-item-icon {
+    background-color: #024106;
+    padding: 20px;
+    border-radius: 50%;
+    color: #fff;
+    margin-bottom: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 767px) {
+    .service-heading {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center position-fixed top-0 w-100">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="assets/img/KATAGAWA.png" alt="Kartarlogo" class="img-fluid w-30">KARANG TARUNA RW 12
+        <!-- <h1 class="sitename">AgriCulture</h1>  -->
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Team</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <!-- <li><a href="blog.html">Blog</a></li> -->
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- start section images -->
+    <section id="hero" class="hero section dark-background">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="assets/img/fotbar.jpg" alt="foto17an">
+          <div class="carousel-container">
+            <h2>Kegiatan Kepemudaan</h2>
+            <p>Karang Taruna menyelenggarakan acara tahunan yaitu 17 agustus
+              untuk mempererat hubungan antaranggota dan mengembangkan potensi generasi muda.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="assets/img/" alt="gotongroyong">
+          <div class="carousel-container">
+            <h2>Gotong Royong dan Kerja Bakti</h2>
+            <p>Karang Taruna mengadakan kegiatan membersihkan lingkungan, memperbaiki fasilitas umum, dan membersihkan
+              selokan untuk menjaga kebersihan dan kesehatan masyarakat.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <div class="carousel-item">
+          <img src="assets/img/Icibos.JPG" alt="foto baksos cianjur">
+          <div class="carousel-container">
+            <h2>Bakti Sosial Untuk Yang Membutuhkan</h2>
+            <p>Kegiatan ini berupa penggalangan dana dan pemberian bantuan sembako, pakaian, atau perlengkapan sekolah
+              kepada masyarakat yang terkena bencana.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <!-- <div class="carousel-item">
+          <img src="assets/img/hero_3.jpg" alt="">
+          <div class="carousel-container">
+            <h2>Kegiatan Pendidikan dan Pelatihan</h2>
+            <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+          </div>
+        </div> -->
+
+        <div class="carousel-item">
+          <img src="assets/img/keberagaman.png" alt="">
+          <div class="carousel-container">
+            <h2>Acara Keagamaan</h2>
+            <p>Kegiatan ini meliputi pengajian, buka puasa bersama, perayaan hari besar agama seperti Idul Fitri atau
+              Natal.</p>
+          </div>
+        </div><!-- End Carousel Item -->
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section py-5 bg-light">
+      <!-- Section Title -->
+      <div class="container section-title text-center mb-5" data-aos="fade-up">
+        <h2 class="display-4">Service</h2>
+        <p class="lead text-muted">Memberikan Layanan Kepada Masyarakat.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row g-4">
+          <!-- Service Item 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item p-4 bg-white rounded shadow-sm text-center h-100" data-aos="fade-up">
+              <div class="service-item-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24">
+                  <path
+                    d="M18 2H6c-1.104 0-2 .896-2 2v16c0 1.104.896 2 2 2h12c1.104 0 2-.896 2-2V4c0-1.104-.896-2-2-2zm0 18H6V4h12v16zm-5-10h-2v6h-2v-6H9v-2h4v2z"
+                    fill="currentColor" />
+                </svg>
+              </div>
+              <h3 class="service-heading text-dark">Requirements</h3>
+              <p>Mengajak generasi muda untuk bergabung dengan Karang Taruna supaya bisa mengenal lingunganya sendiri.</p>
+            </div>
+          </div>
+
+          <!-- Service Item 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item p-4 bg-white rounded shadow-sm text-center h-100" data-aos="fade-up">
+              <div class="service-item-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                </svg>
+              </div>
+              <h3 class="service-heading text-dark">Donations & Fundraising</h3>
+              <p> Layanan untuk melakukan donasi bagi program sosial atau bencana alam yang dilaksanakan oleh Karang
+                Taruna.</p>
+            </div>
+          </div>
+
+          <!-- Service Item 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item p-4 bg-white rounded shadow-sm text-center h-100" data-aos="fade-up">
+              <div class="service-item-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24">
+                  <path
+                    d="M20 4h-3.586l-1-1H8.586l-1 1H4c-1.104 0-2 .896-2 2v12c0 1.104.896 2 2 2h16c1.104 0 2-.896 2-2V6c0-1.104-.896-2-2-2zm0 14H4V6h3.586l1-1h8.828l1 1H20v12z"
+                    fill="currentColor" />
+                  <circle cx="12" cy="12" r="3" fill="currentColor" />
+                </svg>
+              </div>
+              <h3 class="service-heading text-dark">Gallery Working</h3>
+              <p>Menampilkan foto dan video kegiatan Karang Taruna, seperti kegiatan bakti sosial, kesehatan,
+                pelatihan, dan lainnya.</p>
+            </div>
+          </div>
+
+          <!-- Service Item 4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item p-4 bg-white rounded shadow-sm text-center h-100" data-aos="fade-up">
+              <div class="service-item-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 512 512">
+                  <path
+                    d="M416 192h-128v-128c0-17.7-14.3-32-32-32s-32 14.3-32 32v128h-128c-17.7 0-32 14.3-32 32s14.3 32 32 32h128v128c0 17.7 14.3 32 32 32s32-14.3 32-32v-128h128c17.7 0 32-14.3 32-32s-14.3-32-32-32z"
+                    fill="#fff" />
+                </svg>
+              </div>
+              <h3 class="service-heading text-dark">Emergency Response</h3>
+              <p> Menyediakan layanan Posyandu untuk membantu masyarakat yang sedang membutuhkan
+                pengobatan.</p>
+            </div>
+          </div>
+
+          <!-- Service Item 5 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item p-4 bg-white rounded shadow-sm text-center h-100" data-aos="fade-up">
+              <div class="service-item-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"
+                    fill="currentColor" />
+                </svg>
+              </div>
+              <h3 class="service-heading text-dark">Discussion Forums</h3>
+              <p>Tempat bagi anggota dan masyarakat untuk berdiskusi tentang berbagai topik sosial, kemanusiaan, dan
+                pembangunan lingkungan.</p>
+            </div>
+          </div>
+
+          <!-- Service Item 6 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="service-item p-4 bg-white rounded shadow-sm text-center h-100" data-aos="fade-up">
+              <div class="service-item-icon mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24">
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                    fill="currentColor" />
+                </svg>
+              </div>
+              <h3 class="service-heading text-dark">Public Complaints</h3>
+              <p> Memungkinkan masyarakat untuk melaporkan masalah sosial atau lingkungan yang memerlukan perhatian dari
+                Karang Taruna.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Services Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+      <div class="content">
+        <div class="container">
+          <div class="row">
+            <!-- Section Title -->
+            <div class="container section-title mt-0 mb-0" data-aos="fade-up">
+              <p>Karang Taruna</p>
+            </div>
+
+            <!-- Logo Section -->
+            <div class="col-lg-6 mb-4 mt-1 mb-lg-0">
+              <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/KATAGAWA.png" alt="Kartarlogo" class="img-fluid">
+                <span>KATAGAWA</span>
+              </a>
+            </div>
+
+            <!-- About Content -->
+            <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
+              <p class="opacity-50">
+                Karang Taruna adalah organisasi kepemudaan yang bergerak di bidang sosial dan kemasyarakatan, didirikan
+                sebagai wadah pengembangan potensi generasi muda dalam berbagai aspek kehidupan. Dengan semangat
+                kebersamaan dan gotong royong, kami berkomitmen untuk menciptakan perubahan positif bagi masyarakat
+                melalui berbagai program yang berkelanjutan.
+              </p>
+              <p class="opacity-50">
+                Sebagai bagian dari masyarakat, Karang Taruna berperan aktif dalam:
+              </p>
+              <ul class="opacity-50">
+                <li>Meningkatkan kesadaran lingkungan melalui kegiatan gotong royong dan penghijauan.</li>
+                <li>Memberdayakan ekonomi lokal dengan pelatihan kewirausahaan dan pengembangan keterampilan.</li>
+                <li>Membantu masyarakat kurang mampu melalui kegiatan bakti sosial dan layanan kesehatan.</li>
+                <li>Mendorong pelestarian budaya dan tradisi melalui festival seni serta kegiatan kepemudaan.</li>
+                <li>Tanggap terhadap bencana alam dengan menjadi relawan dan memberikan bantuan darurat.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+
+    <!-- About 3 Section -->
+    <section id="about-3" class="about-3 section">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-between align-items-center">
+          <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+              <div class="container section-title mt-0 mb-0" data-aos="fade-up">
+                <p>Dokumentasi</p>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <a href="" class="glightbox pulsating-play-btn">
+                    <span class="play">
+                      <i class="bi bi-play-fill red-play-icon"></i>
+                    </span>
+                  </a>
+                  <img src="assets/img/Anu.JPG" class="d-block w-100 img-fluid" alt="Image">
+                </div>
+                               
+                <div class="carousel-item">
+                  <a href="https://www.instagram.com/reel/C4lONqGu9RU/?igsh=dng3MndlZXpmeWF0" class="glightbox pulsating-play-btn">
+                    <span class="play red-play-btn"><i class="bi bi-play-fill"></i></span>
+                  </a>
+                  <img src="assets/img/anu2.JPG" class="d-block w-100 img-fluid" alt="Image">
+                </div>
+                <div class="carousel-item">
+                  <a href="https://www.instagram.com/reel/CvzmA37AL0H/?igsh=MXJwamJwbXZsZzRtZw==" class="glightbox pulsating-play-btn">
+                    <span class="play"><i class="bi bi-play-fill"></i></span>
+                  </a>
+                  <img src="assets/img/Anu3.JPG" class="d-block w-100 img-fluid" alt="Image">
+                </div>
+              </div>
+              <!-- Previous Button -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <!-- Next Button -->
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          
+          <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
+           
+            <h2 class="content-title mb-4">Dokumentasi Kegiatan Kami</h2>
+            <p class="mb-4">
+              Saksikan video pendek yang menampilkan kisah lingkungan kami di Blok Singkuk, mulai dari hutan yang subur
+              hingga perkembangannya menjadi daerah padat penduduk. Temukan juga asal-usul nama Blok Singkuk dan
+              berbagai sejarah menarik lainnya. <br>
+              Tonton video lengkapnya untuk lebih mengetahui cerita kami ...
+            </p>
+            <ul class="list-unstyled list-check">
+              <li>Pergolakan perubahan alam yang luar biasa</li>
+              <li>Sejarah dan perkembangan Blok Singkuk</li>
+              <li>Mengenal lebih dekat masyarakat dan budaya setempat</li>
+              <li>Konten Konten video menarik dari Karang Taruna</li>
+            </ul>
+
+            <p><a href="#" class="btn-cta">Hubungi Kami</a></p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About 3 Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename" style="color: rgb(76, 0, 255);">KATAGAWA</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Telukan, Grogol, Sukoharjo, Jawa Tengah</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+62 </span></p>
+              <p><strong>Email:</strong> <span>katagawa@gmail.com</span></p>
+            </div>
+          </div><br>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="copyright text-center">
+      <div
+        class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+  
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div>
+            © Copyright <strong><span>KATAGAWA</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="https://github.com/">T</a>
+          </div>
+        </div>
+  
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href="https://chat.whatsapp.com/0StM6fQ11FoIVxkweN1QMb"><i class="bi bi whatsapp"></i></a>
+          <a href="https://www.instagram.com/katagawa_"><i class="bi bi-instagram"></i></a>
+        </div>
+  
+      </div>
+    </div>
+  
+  </footer>
+  
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+  
+  <!-- Preloader -->
+  <div id="preloader"></div>
+  
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  
+  </body>
+  
+  </html>
