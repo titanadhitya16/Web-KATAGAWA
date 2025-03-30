@@ -2299,4 +2299,26 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
 }
+.social-links a {
+  color: #fff !important;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: 0.3s;
+}
 
+.social-links a:hover {
+  color: #024106 !important;
+}
+
+.mobile-nav-toggle {
+  color: #024106 !important;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none !important;
+}
+
+@media (max-width: 1200px) {
+  .mobile-nav-toggle {
+    display: inline-block !important;
+  }
+}
