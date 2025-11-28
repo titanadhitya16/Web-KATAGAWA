@@ -1,760 +1,682 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Keuangan KAS</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Kas | KATAGAWA</title>
+  <meta name="description" content="Laporan Keuangan Karang Taruna RW 12">
+  <meta name="keywords" content="kas, keuangan, karang taruna, laporan">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            overflow: hidden;
-        }
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
 
-        .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-        .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+  <!-- Main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
 
-        .content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 30px;
-        }
+  <style>
+    /* Override untuk konsistensi KATAGAWA */
+    body {
+      padding-top: 80px;
+      background-color: #f8f9fa;
+    }
 
-        @media (max-width: 768px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
-        }
+    .katagawa-header {
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .card {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 20px;
-            border-left: 5px solid #667eea;
-        }
+    .section-title h2 {
+      font-family: "Marcellus", serif;
+      font-weight: 400;
+      color: #212529;
+    }
 
-        .card h2 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.3em;
-        }
+    .service-item-icon {
+      background-color: #024106;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+    .card {
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-            font-weight: 500;
-        }
+    .card:hover {
+      transform: translateY(-5px);
+    }
 
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 1em;
-        }
+    .btn-katagawa {
+      background-color: #024106;
+      border-color: #024106;
+    }
 
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
-        }
+    .btn-katagawa:hover {
+      background-color: #012d04;
+      border-color: #012d04;
+    }
 
-        .btn-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
+    .btn-outline-katagawa {
+      color: #024106;
+      border-color: #024106;
+    }
 
-        button {
-            padding: 12px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            font-size: 1em;
-        }
+    .btn-outline-katagawa:hover {
+      background-color: #024106;
+      color: white;
+    }
 
-        .btn-primary {
-            background: #667eea;
-            color: white;
-            grid-column: 1 / -1;
-        }
+    .stat-box {
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      background: white;
+      border-top: 4px solid #024106;
+    }
 
-        .btn-primary:hover {
-            background: #5568d3;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #024106;
+    }
 
-        .btn-success {
-            background: #28a745;
-            color: white;
-        }
+    .stat-label {
+      color: #6c757d;
+      font-size: 0.9rem;
+    }
 
-        .btn-success:hover {
-            background: #218838;
-        }
+    .masuk .stat-value { color: #198754; border-top-color: #198754 !important; }
+    .keluar .stat-value { color: #dc3545; border-top-color: #dc3545 !important; }
+    .saldo .stat-value { color: #0d6efd; border-top-color: #0d6efd !important; }
 
-        .btn-danger {
-            background: #dc3545;
-            color: white;
-        }
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      color: #6c757d;
+      border-bottom: 2px solid transparent;
+    }
 
-        .btn-danger:hover {
-            background: #c82333;
-        }
+    .tab-btn.active {
+      color: #024106;
+      border-bottom-color: #024106;
+    }
 
-        .btn-info {
-            background: #17a2b8;
-            color: white;
-        }
+    .alert {
+      margin-bottom: 1rem;
+    }
 
-        .btn-info:hover {
-            background: #138496;
-        }
+    /* Tabel */
+    .table {
+      font-size: 0.95rem;
+    }
 
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
+    .table th {
+      background-color: #024106;
+      color: white;
+    }
 
-        @media (max-width: 768px) {
-            .stats {
-                grid-template-columns: 1fr;
-            }
-        }
+    .table-hover tbody tr:hover {
+      background-color: #f1f3f5;
+    }
 
-        .stat-box {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            border-top: 3px solid #667eea;
-        }
-
-        .stat-box.masuk {
-            border-top-color: #28a745;
-        }
-
-        .stat-box.keluar {
-            border-top-color: #dc3545;
-        }
-
-        .stat-box.saldo {
-            border-top-color: #17a2b8;
-        }
-
-        .stat-label {
-            color: #999;
-            font-size: 0.9em;
-            margin-bottom: 5px;
-        }
-
-        .stat-value {
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .masuk .stat-value {
-            color: #28a745;
-        }
-
-        .keluar .stat-value {
-            color: #dc3545;
-        }
-
-        .saldo .stat-value {
-            color: #17a2b8;
-        }
-
-        .full-width {
-            grid-column: 1 / -1;
-        }
-
-        .table-container {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th {
-            background: #667eea;
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: bold;
-        }
-
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        tr:hover {
-            background: #f5f5f5;
-        }
-
-        .nominal {
-            color: #28a745;
-            font-weight: bold;
-        }
-
-        .nominal.keluar {
-            color: #dc3545;
-        }
-
-        .btn-edit, .btn-delete {
-            padding: 5px 10px;
-            font-size: 0.9em;
-            margin-right: 5px;
-            cursor: pointer;
-            border: none;
-            border-radius: 3px;
-            color: white;
-        }
-
-        .btn-edit {
-            background: #17a2b8;
-        }
-
-        .btn-delete {
-            background: #dc3545;
-        }
-
-        .alert {
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            display: none;
-        }
-
-        .alert.success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            display: block;
-        }
-
-        .alert.error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            display: block;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 0;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #ddd;
-        }
-
-        .tab-btn {
-            padding: 12px 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #666;
-            border-bottom: 3px solid transparent;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .tab-btn.active {
-            color: #667eea;
-            border-bottom-color: #667eea;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-    </style>
+    .btn-edit { background-color: #17a2b8; border: none; }
+    .btn-delete { background-color: #dc3545; border: none; }
+    .btn-edit:hover { background-color: #138496; }
+    .btn-delete:hover { background-color: #c82333; }
+  </style>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>💰 Sistem Keuangan KAS</h1>
-            <p>Kelola kas masuk dan kas keluar dengan mudah</p>
+
+<body class="kas-page">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center position-fixed top-0 w-100">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/KATAGAWA.png" alt="KATAGAWA Logo" class="img-fluid me-2" style="height: 40px;">
+        <span>KARANG TARUNA RW 12</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Team</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="Kas.html" class="active">Kas</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main class="main">
+
+    <!-- ======= Kas Section ======= -->
+    <section id="kas" class="section py-5">
+      <div class="container">
+
+        <!-- Section Title -->
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
+            <h2 class="display-5 mb-3">Laporan Keuangan Kas</h2>
+            <p class="text-muted">Catatan transaksi pemasukan dan pengeluaran Karang Taruna RW 12</p>
+          </div>
         </div>
 
-        <div class="content">
-            <!-- Statistik -->
-            <div class="stats full-width">
-                <div class="stat-box masuk">
-                    <div class="stat-label">Kas Masuk</div>
-                    <div class="stat-value" id="totalMasuk">Rp 0</div>
-                </div>
-                <div class="stat-box keluar">
-                    <div class="stat-label">Kas Keluar</div>
-                    <div class="stat-value" id="totalKeluar">Rp 0</div>
-                </div>
-                <div class="stat-box saldo">
-                    <div class="stat-label">Saldo Kas</div>
-                    <div class="stat-value" id="totalSaldo">Rp 0</div>
-                </div>
+        <!-- Statistik -->
+        <div class="row g-4 mb-5" data-aos="fade-up">
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-box masuk shadow-sm">
+              <div class="service-item-icon mb-3">
+                <i class="bi bi-arrow-up-circle fs-1"></i>
+              </div>
+              <div class="stat-label">Total Kas Masuk</div>
+              <div class="stat-value" id="totalMasuk">Rp 0</div>
             </div>
-
-            <!-- Form Input -->
-            <div class="card">
-                <h2>📝 Input Transaksi</h2>
-                <div class="alert" id="alert"></div>
-                
-                <div class="form-group">
-                    <label>Jenis Transaksi</label>
-                    <select id="jenisTrans">
-                        <option value="">-- Pilih --</option>
-                        <option value="masuk">Kas Masuk</option>
-                        <option value="keluar">Kas Keluar</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Nominal</label>
-                    <input type="number" id="nominal" placeholder="Contoh: 100000" min="0">
-                </div>
-
-                <div class="form-group">
-                    <label>Kategori</label>
-                    <select id="kategori">
-                        <option value="">-- Pilih --</option>
-                        <option value="Penjualan">Penjualan</option>
-                        <option value="Donasi">Donasi</option>
-                        <option value="Pinjaman">Pinjaman</option>
-                        <option value="Gaji">Gaji</option>
-                        <option value="Operasional">Operasional</option>
-                        <option value="Pembelian">Pembelian</option>
-                        <option value="Utility">Utility</option>
-                        <option value="Lainnya">Lainnya</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Keterangan</label>
-                    <textarea id="keterangan" placeholder="Masukkan keterangan transaksi..." rows="3"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Tanggal</label>
-                    <input type="date" id="tanggal">
-                </div>
-
-                <button class="btn-primary" onclick="tambahTransaksi()">Simpan Transaksi</button>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-box keluar shadow-sm">
+              <div class="service-item-icon mb-3">
+                <i class="bi bi-arrow-down-circle fs-1"></i>
+              </div>
+              <div class="stat-label">Total Kas Keluar</div>
+              <div class="stat-value" id="totalKeluar">Rp 0</div>
             </div>
-
-            <!-- Data Transaksi -->
-            <div class="card full-width">
-                <h2>📊 Data Transaksi</h2>
-                
-                <div class="tabs">
-                    <button class="tab-btn active" onclick="switchTab('semua')">Semua</button>
-                    <button class="tab-btn" onclick="switchTab('masuk')">Kas Masuk</button>
-                    <button class="tab-btn" onclick="switchTab('keluar')">Kas Keluar</button>
-                </div>
-
-                <div id="semua" class="tab-content active">
-                    <div class="table-container">
-                        <table id="tabelSemua">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Tanggal</th>
-                                    <th>Jenis</th>
-                                    <th>Kategori</th>
-                                    <th>Nominal</th>
-                                    <th>Keterangan</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bodyTabelSemua"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div id="masuk" class="tab-content">
-                    <div class="table-container">
-                        <table id="tabelMasuk">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Tanggal</th>
-                                    <th>Kategori</th>
-                                    <th>Nominal</th>
-                                    <th>Keterangan</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bodyTabelMasuk"></tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <div id="keluar" class="tab-content">
-                    <div class="table-container">
-                        <table id="tabelKeluar">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Tanggal</th>
-                                    <th>Kategori</th>
-                                    <th>Nominal</th>
-                                    <th>Keterangan</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bodyTabelKeluar"></tbody>
-                        </table>
-                    </div>
-                </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="stat-box saldo shadow-sm">
+              <div class="service-item-icon mb-3">
+                <i class="bi bi-cash-coin fs-1"></i>
+              </div>
+              <div class="stat-label">Saldo Tersedia</div>
+              <div class="stat-value" id="totalSaldo">Rp 0</div>
             </div>
-
-            <!-- Export Data -->
-            <div class="card full-width">
-                <h2>📥 Unduh Data</h2>
-                <div class="btn-group" style="grid-template-columns: 1fr 1fr;">
-                    <button class="btn-info" onclick="exportCSV()">Unduh CSV</button>
-                    <button class="btn-info" onclick="printReport()">Cetak Laporan</button>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <div class="row g-4">
+          <!-- Form Input -->
+          <div class="col-lg-5">
+            <div class="card p-4 h-100">
+              <div class="d-flex align-items-center mb-4">
+                <div class="service-item-icon me-3">
+                  <i class="bi bi-pencil-square"></i>
+                </div>
+                <h3 class="mb-0">Input Transaksi</h3>
+              </div>
+
+              <div class="alert alert-success d-none" id="alertSuccess"></div>
+              <div class="alert alert-danger d-none" id="alertError"></div>
+
+              <div class="mb-3">
+                <label class="form-label">Jenis Transaksi</label>
+                <select id="jenisTrans" class="form-select">
+                  <option value="">-- Pilih --</option>
+                  <option value="masuk">Kas Masuk</option>
+                  <option value="keluar">Kas Keluar</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Nominal (Rp)</label>
+                <input type="number" id="nominal" class="form-control" placeholder="Contoh: 100000" min="0">
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Kategori</label>
+                <select id="kategori" class="form-select">
+                  <option value="">-- Pilih --</option>
+                  <option value="Donasi">Donasi</option>
+                  <option value="Iuran">Iuran Anggota</option>
+                  <option value="Acara">Pendapatan Acara</option>
+                  <option value="Gaji">Honor Panitia</option>
+                  <option value="Operasional">Operasional</option>
+                  <option value="Konsumsi">Konsumsi</option>
+                  <option value="Alat">Pembelian Alat</option>
+                  <option value="Lainnya">Lainnya</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Keterangan</label>
+                <textarea id="keterangan" class="form-control" rows="2" placeholder="Keterangan transaksi..."></textarea>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Tanggal</label>
+                <input type="date" id="tanggal" class="form-control">
+              </div>
+
+              <div class="d-grid">
+                <button class="btn btn-katagawa" onclick="tambahTransaksi()">
+                  <i class="bi bi-save me-2"></i> Simpan Transaksi
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data & Tabel -->
+          <div class="col-lg-7">
+            <div class="card p-4 h-100">
+              <div class="d-flex align-items-center mb-4">
+                <div class="service-item-icon me-3">
+                  <i class="bi bi-table"></i>
+                </div>
+                <h3 class="mb-0">Riwayat Transaksi</h3>
+              </div>
+
+              <!-- Tabs -->
+              <ul class="nav nav-tabs mb-4" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active tab-btn" data-bs-target="#semua" type="button" role="tab" onclick="switchTab('semua')">Semua</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link tab-btn" data-bs-target="#masuk" type="button" role="tab" onclick="switchTab('masuk')">Masuk</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link tab-btn" data-bs-target="#keluar" type="button" role="tab" onclick="switchTab('keluar')">Keluar</button>
+                </li>
+              </ul>
+
+              <div class="tab-content">
+                <!-- Semua -->
+                <div class="tab-pane fade show active" id="semua" role="tabpanel">
+                  <div class="table-responsive">
+                    <table class="table table-hover align-middle" id="tabelSemua">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Tanggal</th>
+                          <th>Jenis</th>
+                          <th>Nominal</th>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody id="bodyTabelSemua"></tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Masuk -->
+                <div class="tab-pane fade" id="masuk" role="tabpanel">
+                  <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Tanggal</th>
+                          <th>Kategori</th>
+                          <th>Nominal</th>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody id="bodyTabelMasuk"></tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- Keluar -->
+                <div class="tab-pane fade" id="keluar" role="tabpanel">
+                  <div class="table-responsive">
+                    <table class="table table-hover align-middle">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Tanggal</th>
+                          <th>Kategori</th>
+                          <th>Nominal</th>
+                          <th>Aksi</th>
+                        </tr>
+                      </thead>
+                      <tbody id="bodyTabelKeluar"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export -->
+          <div class="col-12">
+            <div class="card p-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="service-item-icon me-3">
+                  <i class="bi bi-download"></i>
+                </div>
+                <h3 class="mb-0">Ekspor & Cetak</h3>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                <button class="btn btn-outline-katagawa" onclick="exportCSV()">
+                  <i class="bi bi-file-earmark-spreadsheet me-2"></i> Unduh CSV
+                </button>
+                <button class="btn btn-outline-katagawa" onclick="printReport()">
+                  <i class="bi bi-printer me-2"></i> Cetak Laporan
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer dark-background">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename" style="color: #ffffff;">KATAGAWA</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Telukan, Grogol, Sukoharjo, Jawa Tengah</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+62 </span></p>
+              <p><strong>Email:</strong> <span>katagawa44@gmail.com</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script>
-        let dataTransaksi = [];
-        let editingId = null;
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div>© Copyright <strong><span>KATAGAWA</span></strong>. All Rights Reserved</div>
+          <div class="credits">Designed by <a href="https://github.com/">T</a></div>
+        </div>
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href="https://chat.whatsapp.com/0StM6fQ11FoIVxkweN1QMb"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://www.instagram.com/katagawa_"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-        // Set tanggal hari ini sebagai default
-        document.getElementById('tanggal').valueAsDate = new Date();
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
-        // Load data dari localStorage saat halaman dibuka
-        function loadData() {
-            const saved = localStorage.getItem('dataKas');
-            if (saved) {
-                dataTransaksi = JSON.parse(saved);
-                updateUI();
-            }
-        }
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
 
-        // Simpan data ke localStorage
-        function saveData() {
-            localStorage.setItem('dataKas', JSON.stringify(dataTransaksi));
-        }
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
 
-        // Format mata uang
-        function formatRupiah(angka) {
-            return new Intl.NumberFormat('id-ID', {
-                style: 'currency',
-                currency: 'IDR',
-                minimumFractionDigits: 0
-            }).format(angka);
-        }
+  <!-- === JavaScript Logika Kas (Tetap Utuh!) === -->
+  <script>
+    let dataTransaksi = [];
+    let editingId = null;
 
-        // Tambah Transaksi
-        function tambahTransaksi() {
-            const jenis = document.getElementById('jenisTrans').value;
-            const nominal = parseInt(document.getElementById('nominal').value);
-            const kategori = document.getElementById('kategori').value;
-            const keterangan = document.getElementById('keterangan').value;
-            const tanggal = document.getElementById('tanggal').value;
+    document.getElementById('tanggal').valueAsDate = new Date();
 
-            if (!jenis || !nominal || !kategori || !tanggal) {
-                showAlert('error', 'Semua field harus diisi!');
-                return;
-            }
+    function loadData() {
+      const saved = localStorage.getItem('dataKas');
+      if (saved) {
+        dataTransaksi = JSON.parse(saved);
+        updateUI();
+      }
+    }
 
-            if (nominal <= 0) {
-                showAlert('error', 'Nominal harus lebih dari 0!');
-                return;
-            }
+    function saveData() {
+      localStorage.setItem('dataKas', JSON.stringify(dataTransaksi));
+    }
 
-            const transaksi = {
-                id: editingId || Date.now(),
-                jenis: jenis,
-                nominal: nominal,
-                kategori: kategori,
-                keterangan: keterangan,
-                tanggal: tanggal
-            };
+    function formatRupiah(angka) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+      }).format(angka);
+    }
 
-            if (editingId) {
-                const index = dataTransaksi.findIndex(t => t.id === editingId);
-                dataTransaksi[index] = transaksi;
-                editingId = null;
-                showAlert('success', 'Transaksi berhasil diperbarui!');
-            } else {
-                dataTransaksi.push(transaksi);
-                showAlert('success', 'Transaksi berhasil ditambahkan!');
-            }
+    function tambahTransaksi() {
+      const jenis = document.getElementById('jenisTrans').value;
+      const nominal = parseInt(document.getElementById('nominal').value);
+      const kategori = document.getElementById('kategori').value;
+      const keterangan = document.getElementById('keterangan').value;
+      const tanggal = document.getElementById('tanggal').value;
 
-            saveData();
-            updateUI();
-            clearForm();
-        }
+      if (!jenis || !nominal || !kategori || !tanggal) {
+        showAlert('error', 'Semua field harus diisi!');
+        return;
+      }
+      if (nominal <= 0) {
+        showAlert('error', 'Nominal harus lebih dari 0!');
+        return;
+      }
 
-        // Edit Transaksi
-        function editTransaksi(id) {
-            const transaksi = dataTransaksi.find(t => t.id === id);
-            if (transaksi) {
-                document.getElementById('jenisTrans').value = transaksi.jenis;
-                document.getElementById('nominal').value = transaksi.nominal;
-                document.getElementById('kategori').value = transaksi.kategori;
-                document.getElementById('keterangan').value = transaksi.keterangan;
-                document.getElementById('tanggal').value = transaksi.tanggal;
-                editingId = id;
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
+      const transaksi = {
+        id: editingId || Date.now(),
+        jenis,
+        nominal,
+        kategori,
+        keterangan,
+        tanggal
+      };
 
-        // Hapus Transaksi
-        function hapusTransaksi(id) {
-            if (confirm('Apakah Anda yakin ingin menghapus transaksi ini?')) {
-                dataTransaksi = dataTransaksi.filter(t => t.id !== id);
-                saveData();
-                updateUI();
-                showAlert('success', 'Transaksi berhasil dihapus!');
-            }
-        }
+      if (editingId) {
+        const index = dataTransaksi.findIndex(t => t.id === editingId);
+        dataTransaksi[index] = transaksi;
+        editingId = null;
+        showAlert('success', 'Transaksi berhasil diperbarui!');
+      } else {
+        dataTransaksi.push(transaksi);
+        showAlert('success', 'Transaksi berhasil ditambahkan!');
+      }
 
-        // Clear Form
-        function clearForm() {
-            document.getElementById('jenisTrans').value = '';
-            document.getElementById('nominal').value = '';
-            document.getElementById('kategori').value = '';
-            document.getElementById('keterangan').value = '';
-            document.getElementById('tanggal').valueAsDate = new Date();
-            editingId = null;
-        }
+      saveData();
+      updateUI();
+      clearForm();
+    }
 
-        // Update UI
-        function updateUI() {
-            updateStatistik();
-            updateTabel();
-        }
+    function editTransaksi(id) {
+      const t = dataTransaksi.find(t => t.id === id);
+      if (t) {
+        document.getElementById('jenisTrans').value = t.jenis;
+        document.getElementById('nominal').value = t.nominal;
+        document.getElementById('kategori').value = t.kategori;
+        document.getElementById('keterangan').value = t.keterangan;
+        document.getElementById('tanggal').value = t.tanggal;
+        editingId = id;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
 
-        // Update Statistik
-        function updateStatistik() {
-            const masuk = dataTransaksi
-                .filter(t => t.jenis === 'masuk')
-                .reduce((sum, t) => sum + t.nominal, 0);
-            const keluar = dataTransaksi
-                .filter(t => t.jenis === 'keluar')
-                .reduce((sum, t) => sum + t.nominal, 0);
-            const saldo = masuk - keluar;
+    function hapusTransaksi(id) {
+      if (confirm('Hapus transaksi ini?')) {
+        dataTransaksi = dataTransaksi.filter(t => t.id !== id);
+        saveData();
+        updateUI();
+        showAlert('success', 'Transaksi dihapus.');
+      }
+    }
 
-            document.getElementById('totalMasuk').textContent = formatRupiah(masuk);
-            document.getElementById('totalKeluar').textContent = formatRupiah(keluar);
-            document.getElementById('totalSaldo').textContent = formatRupiah(saldo);
-        }
+    function clearForm() {
+      document.getElementById('jenisTrans').value = '';
+      document.getElementById('nominal').value = '';
+      document.getElementById('kategori').value = '';
+      document.getElementById('keterangan').value = '';
+      document.getElementById('tanggal').valueAsDate = new Date();
+      editingId = null;
+    }
 
-        // Update Tabel
-        function updateTabel() {
-            const sorted = [...dataTransaksi].sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
+    function updateUI() {
+      updateStatistik();
+      updateTabel();
+    }
 
-            // Tabel Semua
-            const bodySemua = document.getElementById('bodyTabelSemua');
-            bodySemua.innerHTML = sorted.map((t, idx) => `
-                <tr>
-                    <td>${idx + 1}</td>
-                    <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
-                    <td>${t.jenis === 'masuk' ? '✅ Masuk' : '❌ Keluar'}</td>
-                    <td>${t.kategori}</td>
-                    <td class="nominal ${t.jenis === 'keluar' ? 'keluar' : ''}">
-                        ${t.jenis === 'keluar' ? '-' : '+'}${formatRupiah(t.nominal)}
-                    </td>
-                    <td>${t.keterangan}</td>
-                    <td>
-                        <button class="btn-edit" onclick="editTransaksi(${t.id})">Edit</button>
-                        <button class="btn-delete" onclick="hapusTransaksi(${t.id})">Hapus</button>
-                    </td>
-                </tr>
-            `).join('');
+    function updateStatistik() {
+      const masuk = dataTransaksi.filter(t => t.jenis === 'masuk').reduce((sum, t) => sum + t.nominal, 0);
+      const keluar = dataTransaksi.filter(t => t.jenis === 'keluar').reduce((sum, t) => sum + t.nominal, 0);
+      const saldo = masuk - keluar;
 
-            // Tabel Masuk
-            const masuk = sorted.filter(t => t.jenis === 'masuk');
-            const bodyMasuk = document.getElementById('bodyTabelMasuk');
-            bodyMasuk.innerHTML = masuk.map((t, idx) => `
-                <tr>
-                    <td>${idx + 1}</td>
-                    <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
-                    <td>${t.kategori}</td>
-                    <td class="nominal">${formatRupiah(t.nominal)}</td>
-                    <td>${t.keterangan}</td>
-                    <td>
-                        <button class="btn-edit" onclick="editTransaksi(${t.id})">Edit</button>
-                        <button class="btn-delete" onclick="hapusTransaksi(${t.id})">Hapus</button>
-                    </td>
-                </tr>
-            `).join('');
+      document.getElementById('totalMasuk').textContent = formatRupiah(masuk);
+      document.getElementById('totalKeluar').textContent = formatRupiah(keluar);
+      document.getElementById('totalSaldo').textContent = formatRupiah(saldo);
+    }
 
-            // Tabel Keluar
-            const keluar = sorted.filter(t => t.jenis === 'keluar');
-            const bodyKeluar = document.getElementById('bodyTabelKeluar');
-            bodyKeluar.innerHTML = keluar.map((t, idx) => `
-                <tr>
-                    <td>${idx + 1}</td>
-                    <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
-                    <td>${t.kategori}</td>
-                    <td class="nominal keluar">${formatRupiah(t.nominal)}</td>
-                    <td>${t.keterangan}</td>
-                    <td>
-                        <button class="btn-edit" onclick="editTransaksi(${t.id})">Edit</button>
-                        <button class="btn-delete" onclick="hapusTransaksi(${t.id})">Hapus</button>
-                    </td>
-                </tr>
-            `).join('');
-        }
+    function updateTabel() {
+      const sorted = [...dataTransaksi].sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
 
-        // Switch Tab
-        function switchTab(tab) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById(tab).classList.add('active');
-            event.target.classList.add('active');
-        }
+      // Semua
+      document.getElementById('bodyTabelSemua').innerHTML = sorted.map((t, i) => `
+        <tr>
+          <td>${i+1}</td>
+          <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
+          <td><span class="badge bg-${t.jenis === 'masuk' ? 'success' : 'danger'}">${t.jenis === 'masuk' ? 'Masuk' : 'Keluar'}</span></td>
+          <td class="${t.jenis === 'keluar' ? 'text-danger' : 'text-success'}">${t.jenis === 'keluar' ? '-' : '+'}${formatRupiah(t.nominal)}</td>
+          <td>
+            <button class="btn btn-sm btn-edit text-white" onclick="editTransaksi(${t.id})"><i class="bi bi-pencil"></i></button>
+            <button class="btn btn-sm btn-delete text-white" onclick="hapusTransaksi(${t.id})"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+      `).join('');
 
-        // Show Alert
-        function showAlert(type, message) {
-            const alert = document.getElementById('alert');
-            alert.className = `alert ${type}`;
-            alert.textContent = message;
-            setTimeout(() => {
-                alert.className = 'alert';
-            }, 3000);
-        }
+      // Masuk
+      const masuk = sorted.filter(t => t.jenis === 'masuk');
+      document.getElementById('bodyTabelMasuk').innerHTML = masuk.map((t, i) => `
+        <tr>
+          <td>${i+1}</td>
+          <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
+          <td>${t.kategori}</td>
+          <td class="text-success">+${formatRupiah(t.nominal)}</td>
+          <td>
+            <button class="btn btn-sm btn-edit text-white" onclick="editTransaksi(${t.id})"><i class="bi bi-pencil"></i></button>
+            <button class="btn btn-sm btn-delete text-white" onclick="hapusTransaksi(${t.id})"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+      `).join('');
 
-        // Export CSV
-        function exportCSV() {
-            if (dataTransaksi.length === 0) {
-                showAlert('error', 'Tidak ada data untuk diekspor!');
-                return;
-            }
+      // Keluar
+      const keluar = sorted.filter(t => t.jenis === 'keluar');
+      document.getElementById('bodyTabelKeluar').innerHTML = keluar.map((t, i) => `
+        <tr>
+          <td>${i+1}</td>
+          <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
+          <td>${t.kategori}</td>
+          <td class="text-danger">-${formatRupiah(t.nominal)}</td>
+          <td>
+            <button class="btn btn-sm btn-edit text-white" onclick="editTransaksi(${t.id})"><i class="bi bi-pencil"></i></button>
+            <button class="btn btn-sm btn-delete text-white" onclick="hapusTransaksi(${t.id})"><i class="bi bi-trash"></i></button>
+          </td>
+        </tr>
+      `).join('');
+    }
 
-            let csv = 'Tanggal,Jenis,Kategori,Nominal,Keterangan\n';
-            dataTransaksi.forEach(t => {
-                csv += `${t.tanggal},${t.jenis},${t.kategori},${t.nominal},"${t.keterangan}"\n`;
-            });
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('show', 'active'));
+      document.querySelectorAll('.nav-link').forEach(el => el.classList.remove('active'));
+      document.getElementById(tab).classList.add('show', 'active');
+      event.target.classList.add('active');
+    }
 
-            const blob = new Blob([csv], { type: 'text/csv' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `Laporan_KAS_${new Date().toISOString().split('T')[0]}.csv`;
-            a.click();
-            showAlert('success', 'Data berhasil diekspor!');
-        }
+    function showAlert(type, message) {
+      const success = document.getElementById('alertSuccess');
+      const error = document.getElementById('alertError');
+      success.classList.add('d-none');
+      error.classList.add('d-none');
 
-        // Print Report
-        function printReport() {
-            if (dataTransaksi.length === 0) {
-                showAlert('error', 'Tidak ada data untuk dicetak!');
-                return;
-            }
+      if (type === 'success') {
+        success.textContent = message;
+        success.classList.remove('d-none');
+        setTimeout(() => success.classList.add('d-none'), 3000);
+      } else {
+        error.textContent = message;
+        error.classList.remove('d-none');
+        setTimeout(() => error.classList.add('d-none'), 3000);
+      }
+    }
 
-            const masuk = dataTransaksi.filter(t => t.jenis === 'masuk').reduce((sum, t) => sum + t.nominal, 0);
-            const keluar = dataTransaksi.filter(t => t.jenis === 'keluar').reduce((sum, t) => sum + t.nominal, 0);
-            const saldo = masuk - keluar;
+    function exportCSV() {
+      if (dataTransaksi.length === 0) return showAlert('error', 'Tidak ada data untuk diekspor.');
+      let csv = 'Tanggal,Jenis,Kategori,Nominal,Keterangan\n';
+      dataTransaksi.forEach(t => {
+        csv += `"${t.tanggal}",${t.jenis},${t.kategori},${t.nominal},"${t.keterangan}"\n`;
+      });
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `KAS_KATAGAWA_${new Date().toISOString().slice(0,10)}.csv`;
+      a.click();
+      showAlert('success', 'Laporan CSV berhasil diunduh.');
+    }
 
-            let printContent = `
-                <h2 style="text-align: center;">LAPORAN KEUANGAN KAS</h2>
-                <p style="text-align: center;">Tanggal Cetak: ${new Date().toLocaleDateString('id-ID')}</p>
-                <hr>
-                <h3>Ringkasan</h3>
-                <table border="1" cellpadding="10" style="width: 100%;">
-                    <tr>
-                        <td>Kas Masuk</td>
-                        <td>${formatRupiah(masuk)}</td>
-                    </tr>
-                    <tr>
-                        <td>Kas Keluar</td>
-                        <td>${formatRupiah(keluar)}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Saldo Kas</strong></td>
-                        <td><strong>${formatRupiah(saldo)}</strong></td>
-                    </tr>
-                </table>
-                <h3 style="margin-top: 20px;">Detail Transaksi</h3>
-                <table border="1" cellpadding="10" style="width: 100%;">
-                    <thead>
-                        <tr>
-                            <th>Tanggal</th>
-                            <th>Jenis</th>
-                            <th>Kategori</th>
-                            <th>Nominal</th>
-                            <th>Keterangan</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
+    function printReport() {
+      if (dataTransaksi.length === 0) return showAlert('error', 'Tidak ada data untuk dicetak.');
+      const masuk = dataTransaksi.filter(t => t.jenis === 'masuk').reduce((s, t) => s + t.nominal, 0);
+      const keluar = dataTransaksi.filter(t => t.jenis === 'keluar').reduce((s, t) => s + t.nominal, 0);
+      const saldo = masuk - keluar;
 
-            dataTransaksi.forEach(t => {
-                printContent += `
-                    <tr>
-                        <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
-                        <td>${t.jenis}</td>
-                        <td>${t.kategori}</td>
-                        <td>${formatRupiah(t.nominal)}</td>
-                        <td>${t.keterangan}</td>
-                    </tr>
-                `;
-            });
+      const win = window.open('', '', 'width=900,height=600');
+      win.document.write(`
+        <html><head><title>Laporan Kas - KATAGAWA</title>
+        <style>body{font-family:Arial,sans-serif;padding:20px;}
+        h2{text-align:center;color:#024106;} .summary{width:100%;border-collapse:collapse;margin:20px 0;}
+        .summary td,.summary th{border:1px solid #ddd;padding:10px;} .success{color:green;} .danger{color:red;}
+        </style></head><body>
+        <h2>LAPORAN KEUANGAN KAS</h2>
+        <p style="text-align:center">Karang Taruna RW 12 | ${new Date().toLocaleDateString('id-ID')}</p>
+        <table class="summary">
+          <tr><th>Kas Masuk</th><td class="success">+${formatRupiah(masuk)}</td></tr>
+          <tr><th>Kas Keluar</th><td class="danger">-${formatRupiah(keluar)}</td></tr>
+          <tr><th><b>Saldo Akhir</b></th><td><b>${formatRupiah(saldo)}</b></td></tr>
+        </table>
+        <h3>Rincian Transaksi</h3>
+        <table class="summary">
+          <thead><tr><th>Tanggal</th><th>Jenis</th><th>Kategori</th><th>Nominal</th><th>Keterangan</th></tr></thead>
+          <tbody>
+            ${dataTransaksi.map(t => `
+              <tr>
+                <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
+                <td>${t.jenis === 'masuk' ? '✅ Masuk' : '❌ Keluar'}</td>
+                <td>${t.kategori}</td>
+                <td class="${t.jenis === 'masuk' ? 'success' : 'danger'}">
+                  ${t.jenis === 'masuk' ? '+' : '-'}${formatRupiah(t.nominal)}
+                </td>
+                <td>${t.keterangan}</td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+        </body></html>
+      `);
+      win.document.close();
+      win.print();
+    }
 
-            printContent += `
-                    </tbody>
-                </table>
-            `;
+    // Init
+    loadData();
+  </script>
 
-            const printWindow = window.open('', '', 'height=600,width=900');
-            printWindow.document.write(printContent);
-            printWindow.document.close();
-            printWindow.print();
-        }
-
-        // Initialize
-        loadData();
-    </script>
 </body>
+
 </html>
