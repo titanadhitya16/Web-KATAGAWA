@@ -15,12 +15,13 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <!-- Bootstrap Icons CDN Fallback -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
@@ -28,7 +29,6 @@
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
-    /* Override untuk konsistensi KATAGAWA */
     body {
       padding-top: 80px;
       background-color: #f8f9fa;
@@ -162,13 +162,29 @@
       font-size: 0.9rem;
     }
 
-    .masuk .stat-box::before { background: linear-gradient(90deg, #198754 0%, #20c997 100%); }
-    .keluar .stat-box::before { background: linear-gradient(90deg, #dc3545 0%, #ff6b6b 100%); }
-    .saldo .stat-box::before { background: linear-gradient(90deg, #0d6efd 0%, #4dabf7 100%); }
-    
-    .masuk .stat-value { color: #198754; }
-    .keluar .stat-value { color: #dc3545; }
-    .saldo .stat-value { color: #0d6efd; }
+    .masuk .stat-box::before {
+      background: linear-gradient(90deg, #198754 0%, #20c997 100%);
+    }
+
+    .keluar .stat-box::before {
+      background: linear-gradient(90deg, #dc3545 0%, #ff6b6b 100%);
+    }
+
+    .saldo .stat-box::before {
+      background: linear-gradient(90deg, #0d6efd 0%, #4dabf7 100%);
+    }
+
+    .masuk .stat-value {
+      color: #198754;
+    }
+
+    .keluar .stat-value {
+      color: #dc3545;
+    }
+
+    .saldo .stat-value {
+      color: #0d6efd;
+    }
 
     .tab-btn {
       background: none;
@@ -188,7 +204,6 @@
       margin-bottom: 1rem;
     }
 
-    /* Tabel */
     .table {
       font-size: 0.95rem;
       border-collapse: separate;
@@ -217,10 +232,23 @@
       background-color: #f8f9fa;
     }
 
-    .btn-edit { background-color: #17a2b8; border: none; }
-    .btn-delete { background-color: #dc3545; border: none; }
-    .btn-edit:hover { background-color: #138496; }
-    .btn-delete:hover { background-color: #c82333; }
+    .btn-edit {
+      background-color: #17a2b8;
+      border: none;
+    }
+
+    .btn-delete {
+      background-color: #dc3545;
+      border: none;
+    }
+
+    .btn-edit:hover {
+      background-color: #138496;
+    }
+
+    .btn-delete:hover {
+      background-color: #c82333;
+    }
   </style>
 </head>
 
@@ -237,12 +265,12 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Halaman Utama</a></li>
-          <li><a href="about.html">Tentang Kami</a></li>
-          <li><a href="services.html">Tim Kami</a></li>
-          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Our Team</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="Kas.html" class="active">Kas</a></li>
-          <li><a href="contact.html">Kontak</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -280,7 +308,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="stat-box masuk shadow-sm">
               <div class="service-item-icon mb-3">
-                <i class="bi bi-arrow-up-circle-fill" style="font-size: 2.5rem; color: white !important; display: block !important;"></i>
+                <i class="bi bi-arrow-up-circle-fill"></i>
               </div>
               <div class="stat-label">Total Kas Masuk</div>
               <div class="stat-value" id="totalMasuk">Rp 0</div>
@@ -289,7 +317,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="stat-box keluar shadow-sm">
               <div class="service-item-icon mb-3">
-                <i class="bi bi-arrow-down-circle-fill" style="font-size: 2.5rem; color: white !important; display: block !important;"></i>
+                <i class="bi bi-arrow-down-circle-fill"></i>
               </div>
               <div class="stat-label">Total Kas Keluar</div>
               <div class="stat-value" id="totalKeluar">Rp 0</div>
@@ -298,7 +326,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="stat-box saldo shadow-sm">
               <div class="service-item-icon mb-3">
-                <i class="bi bi-wallet-fill" style="font-size: 2.5rem; color: white !important; display: block !important;"></i>
+                <i class="bi bi-wallet-fill"></i>
               </div>
               <div class="stat-label">Saldo Tersedia</div>
               <div class="stat-value" id="totalSaldo">Rp 0</div>
@@ -312,7 +340,7 @@
             <div class="card p-4 h-100">
               <div class="d-flex align-items-center mb-4">
                 <div class="service-item-icon me-3">
-                  <i class="bi bi-file-earmark-plus-fill" style="color: white !important; display: block !important;"></i>
+                  <i class="bi bi-file-earmark-plus-fill"></i>
                 </div>
                 <h3 class="mb-0">Input Transaksi</h3>
               </div>
@@ -372,7 +400,7 @@
             <div class="card p-4 h-100">
               <div class="d-flex align-items-center mb-4">
                 <div class="service-item-icon me-3">
-                  <i class="bi bi-receipt-cutoff" style="color: white !important; display: block !important;"></i>
+                  <i class="bi bi-receipt-cutoff"></i>
                 </div>
                 <h3 class="mb-0">Riwayat Transaksi</h3>
               </div>
@@ -380,18 +408,20 @@
               <!-- Tabs -->
               <ul class="nav nav-tabs mb-4" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link active tab-btn" data-bs-target="#semua" type="button" role="tab" onclick="switchTab('semua')">Semua</button>
+                  <button class="nav-link active tab-btn" data-bs-target="#semua" type="button" role="tab"
+                    onclick="switchTab('semua')">Semua</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link tab-btn" data-bs-target="#masuk" type="button" role="tab" onclick="switchTab('masuk')">Masuk</button>
+                  <button class="nav-link tab-btn" data-bs-target="#masuk" type="button" role="tab"
+                    onclick="switchTab('masuk')">Masuk</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link tab-btn" data-bs-target="#keluar" type="button" role="tab" onclick="switchTab('keluar')">Keluar</button>
+                  <button class="nav-link tab-btn" data-bs-target="#keluar" type="button" role="tab"
+                    onclick="switchTab('keluar')">Keluar</button>
                 </li>
               </ul>
 
               <div class="tab-content">
-                <!-- Semua -->
                 <div class="tab-pane fade show active" id="semua" role="tabpanel">
                   <div class="table-responsive">
                     <table class="table table-hover align-middle" id="tabelSemua">
@@ -409,7 +439,6 @@
                   </div>
                 </div>
 
-                <!-- Masuk -->
                 <div class="tab-pane fade" id="masuk" role="tabpanel">
                   <div class="table-responsive">
                     <table class="table table-hover align-middle">
@@ -427,7 +456,6 @@
                   </div>
                 </div>
 
-                <!-- Keluar -->
                 <div class="tab-pane fade" id="keluar" role="tabpanel">
                   <div class="table-responsive">
                     <table class="table table-hover align-middle">
@@ -453,7 +481,7 @@
             <div class="card p-4">
               <div class="d-flex align-items-center mb-3">
                 <div class="service-item-icon me-3">
-                  <i class="bi bi-cloud-download-fill" style="color: white !important; display: block !important;"></i>
+                  <i class="bi bi-cloud-download-fill"></i>
                 </div>
                 <h3 class="mb-0">Ekspor & Cetak</h3>
               </div>
@@ -548,76 +576,72 @@
     <i class="bi bi-arrow-up-circle-fill"></i>
   </a>
 
-  <!-- Vendor JS Files -->
+  <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-
-  <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- === JavaScript Logika Kas (Tetap Utuh!) === -->
+  <!-- 🔥 Firebase SDK (CDN - No npm needed for GitHub Pages!) -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-database-compat.js"></script>
+
   <script>
-    let dataTransaksi = [];
+    // 🔑 Firebase Config — sudah diisi sesuai data Anda
+    const firebaseConfig = {
+      apiKey: "AIzaSyBccJWQ-O0hsfT1YQiJoMCyh6D_ZSmYMnQ",
+      authDomain: "kas-karangtaruna.firebaseapp.com",
+      databaseURL: "https://kas-karangtaruna-default-rtdb.firebaseio.com",
+      projectId: "kas-karangtaruna",
+      storageBucket: "kas-karangtaruna.firebasestorage.app",
+      messagingSenderId: "701576134150",
+      appId: "1:701576134150:web:37a37ff05e06dc508dcd87",
+      measurementId: "G-J4NPLR3NNF"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+    const transaksiRef = db.ref('transaksi');
+
+    // State
     let editingId = null;
     let isAuthenticated = false;
+    let dataTransaksi = [];
 
-    // Default credentials (bisa diubah sesuai kebutuhan)
-    const ADMIN_USERNAME = 'admin';
-    const ADMIN_PASSWORD = 'katagawa2025';
+    // === UI & Auth Helpers ===
+    function formatRupiah(angka) {
+      return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0
+      }).format(angka);
+    }
 
-    // Check authentication on load
-    function checkAuth() {
-      const auth = localStorage.getItem('kasAuth');
-      if (auth === 'true') {
-        isAuthenticated = true;
-        updateAuthUI();
+    function showAlert(type, message) {
+      const success = document.getElementById('alertSuccess');
+      const error = document.getElementById('alertError');
+      success.classList.add('d-none');
+      error.classList.add('d-none');
+      if (type === 'success') {
+        success.textContent = message;
+        success.classList.remove('d-none');
+        setTimeout(() => success.classList.add('d-none'), 3000);
       } else {
-        isAuthenticated = false;
-        updateAuthUI();
+        error.textContent = message;
+        error.classList.remove('d-none');
+        setTimeout(() => error.classList.add('d-none'), 3000);
       }
     }
 
-    // Show login modal
-    function showLoginModal() {
-      const modal = new bootstrap.Modal(document.getElementById('loginModal'));
-      modal.show();
+    function clearForm() {
+      document.getElementById('jenisTrans').value = '';
+      document.getElementById('nominal').value = '';
+      document.getElementById('kategori').value = '';
+      document.getElementById('keterangan').value = '';
+      document.getElementById('tanggal').valueAsDate = new Date();
+      editingId = null;
     }
 
-    // Handle login
-    function handleLogin(event) {
-      event.preventDefault();
-      const username = document.getElementById('loginUsername').value;
-      const password = document.getElementById('loginPassword').value;
-      const errorDiv = document.getElementById('loginError');
-
-      if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-        isAuthenticated = true;
-        localStorage.setItem('kasAuth', 'true');
-        updateAuthUI();
-        const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-        modal.hide();
-        document.getElementById('loginForm').reset();
-        errorDiv.classList.add('d-none');
-        showAlert('success', 'Login berhasil!');
-      } else {
-        errorDiv.textContent = 'Username atau password salah!';
-        errorDiv.classList.remove('d-none');
-      }
-    }
-
-    // Logout
-    function logout() {
-      if (confirm('Yakin ingin logout?')) {
-        isAuthenticated = false;
-        localStorage.removeItem('kasAuth');
-        updateAuthUI();
-        editingId = null;
-        clearForm();
-        showAlert('success', 'Logout berhasil!');
-      }
-    }
-
-    // Update auth UI
     function updateAuthUI() {
       const btnLogin = document.getElementById('btnLogin');
       const btnLogout = document.getElementById('btnLogout');
@@ -635,28 +659,52 @@
       updateTabel();
     }
 
-    document.getElementById('tanggal').valueAsDate = new Date();
+    // Login sederhana (local)
+    const ADMIN_USERNAME = 'admin';
+    const ADMIN_PASSWORD = 'katagawa2025';
 
-    function loadData() {
-      const saved = localStorage.getItem('dataKas');
-      if (saved) {
-        dataTransaksi = JSON.parse(saved);
-        updateUI();
+    function checkAuth() {
+      isAuthenticated = localStorage.getItem('kasAuth') === 'true';
+      updateAuthUI();
+    }
+
+    function showLoginModal() {
+      const modal = new bootstrap.Modal(document.getElementById('loginModal'));
+      modal.show();
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById('loginUsername').value;
+      const password = document.getElementById('loginPassword').value;
+      const errorDiv = document.getElementById('loginError');
+
+      if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+        isAuthenticated = true;
+        localStorage.setItem('kasAuth', 'true');
+        updateAuthUI();
+        bootstrap.Modal.getInstance(document.getElementById('loginModal')).hide();
+        document.getElementById('loginForm').reset();
+        errorDiv.classList.add('d-none');
+        showAlert('success', 'Login berhasil!');
+      } else {
+        errorDiv.textContent = 'Username atau password salah!';
+        errorDiv.classList.remove('d-none');
       }
     }
 
-    function saveData() {
-      localStorage.setItem('dataKas', JSON.stringify(dataTransaksi));
+    function logout() {
+      if (confirm('Yakin ingin logout?')) {
+        isAuthenticated = false;
+        localStorage.removeItem('kasAuth');
+        updateAuthUI();
+        editingId = null;
+        clearForm();
+        showAlert('success', 'Logout berhasil!');
+      }
     }
 
-    function formatRupiah(angka) {
-      return new Intl.NumberFormat('id-ID', {
-        style: 'currency',
-        currency: 'IDR',
-        minimumFractionDigits: 0
-      }).format(angka);
-    }
-
+    // === Firebase CRUD ===
     function tambahTransaksi() {
       const jenis = document.getElementById('jenisTrans').value;
       const nominal = parseInt(document.getElementById('nominal').value);
@@ -665,41 +713,32 @@
       const tanggal = document.getElementById('tanggal').value;
 
       if (!jenis || !nominal || !kategori || !tanggal) {
-        showAlert('error', 'Semua field harus diisi!');
-        return;
+        return showAlert('error', 'Semua field harus diisi!');
       }
       if (nominal <= 0) {
-        showAlert('error', 'Nominal harus lebih dari 0!');
-        return;
+        return showAlert('error', 'Nominal harus lebih dari 0!');
       }
 
-      const transaksi = {
-        id: editingId || Date.now(),
-        jenis,
-        nominal,
-        kategori,
-        keterangan,
-        tanggal
-      };
+      const transaksi = { jenis, nominal, kategori, keterangan, tanggal };
 
       if (editingId) {
-        const index = dataTransaksi.findIndex(t => t.id === editingId);
-        dataTransaksi[index] = transaksi;
-        editingId = null;
-        showAlert('success', 'Transaksi berhasil diperbarui!');
+        transaksiRef.child(editingId).update(transaksi)
+          .then(() => {
+            showAlert('success', 'Transaksi berhasil diperbarui!');
+            editingId = null;
+            clearForm();
+          })
+          .catch(err => showAlert('error', 'Gagal update: ' + err.message));
       } else {
-        dataTransaksi.push(transaksi);
-        showAlert('success', 'Transaksi berhasil ditambahkan!');
+        transaksiRef.push(transaksi)
+          .then(() => showAlert('success', 'Transaksi berhasil ditambahkan!'))
+          .catch(err => showAlert('error', 'Gagal simpan: ' + err.message));
       }
-
-      saveData();
-      updateUI();
-      clearForm();
     }
 
     function editTransaksi(id) {
       if (!isAuthenticated) {
-        showAlert('error', 'Anda harus login terlebih dahulu untuk mengedit!');
+        showAlert('error', 'Login dulu untuk edit!');
         showLoginModal();
         return;
       }
@@ -717,32 +756,18 @@
 
     function hapusTransaksi(id) {
       if (!isAuthenticated) {
-        showAlert('error', 'Anda harus login terlebih dahulu untuk menghapus!');
+        showAlert('error', 'Login dulu untuk hapus!');
         showLoginModal();
         return;
       }
       if (confirm('Hapus transaksi ini?')) {
-        dataTransaksi = dataTransaksi.filter(t => t.id !== id);
-        saveData();
-        updateUI();
-        showAlert('success', 'Transaksi dihapus.');
+        transaksiRef.child(id).remove()
+          .then(() => showAlert('success', 'Transaksi dihapus.'))
+          .catch(err => showAlert('error', 'Gagal hapus: ' + err.message));
       }
     }
 
-    function clearForm() {
-      document.getElementById('jenisTrans').value = '';
-      document.getElementById('nominal').value = '';
-      document.getElementById('kategori').value = '';
-      document.getElementById('keterangan').value = '';
-      document.getElementById('tanggal').valueAsDate = new Date();
-      editingId = null;
-    }
-
-    function updateUI() {
-      updateStatistik();
-      updateTabel();
-    }
-
+    // === UI Update ===
     function updateStatistik() {
       const masuk = dataTransaksi.filter(t => t.jenis === 'masuk').reduce((sum, t) => sum + t.nominal, 0);
       const keluar = dataTransaksi.filter(t => t.jenis === 'keluar').reduce((sum, t) => sum + t.nominal, 0);
@@ -756,79 +781,33 @@
     function updateTabel() {
       const sorted = [...dataTransaksi].sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal));
 
-      // Semua
-      document.getElementById('bodyTabelSemua').innerHTML = sorted.map((t, i) => `
+      const renderRow = (t, i, includeJenisBadge = true) => `
         <tr>
-          <td>${i+1}</td>
+          <td>${i + 1}</td>
           <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
-          <td><span class="badge bg-${t.jenis === 'masuk' ? 'success' : 'danger'}">${t.jenis === 'masuk' ? 'Masuk' : 'Keluar'}</span></td>
-          <td class="${t.jenis === 'keluar' ? 'text-danger' : 'text-success'}">${t.jenis === 'keluar' ? '-' : '+'}${formatRupiah(t.nominal)}</td>
+          <td>${includeJenisBadge ? 
+            `<span class="badge bg-${t.jenis === 'masuk' ? 'success' : 'danger'}">${t.jenis === 'masuk' ? 'Masuk' : 'Keluar'}</span>` : 
+            t.kategori
+          }</td>
+          <td class="${t.jenis === 'keluar' ? 'text-danger' : 'text-success'}">
+            ${t.jenis === 'keluar' ? '-' : '+'}${formatRupiah(t.nominal)}
+          </td>
           <td>
             ${isAuthenticated ? `
-              <button class="btn btn-sm btn-edit text-white" onclick="editTransaksi(${t.id})" title="Edit">
+              <button class="btn btn-sm btn-edit text-white" onclick="editTransaksi('${t.id}')" title="Edit">
                 <i class="bi bi-pencil-fill"></i>
               </button>
-              <button class="btn btn-sm btn-delete text-white" onclick="hapusTransaksi(${t.id})" title="Hapus">
+              <button class="btn btn-sm btn-delete text-white" onclick="hapusTransaksi('${t.id}')" title="Hapus">
                 <i class="bi bi-trash3-fill"></i>
               </button>
-            ` : `
-              <span class="text-muted small">
-                <i class="bi bi-lock-fill"></i> Login untuk edit/hapus
-              </span>
-            `}
+            ` : `<span class="text-muted small"><i class="bi bi-lock-fill"></i> Login untuk edit/hapus</span>`}
           </td>
         </tr>
-      `).join('');
+      `;
 
-      // Masuk
-      const masuk = sorted.filter(t => t.jenis === 'masuk');
-      document.getElementById('bodyTabelMasuk').innerHTML = masuk.map((t, i) => `
-        <tr>
-          <td>${i+1}</td>
-          <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
-          <td>${t.kategori}</td>
-          <td class="text-success">+${formatRupiah(t.nominal)}</td>
-          <td>
-            ${isAuthenticated ? `
-              <button class="btn btn-sm btn-edit text-white" onclick="editTransaksi(${t.id})" title="Edit">
-                <i class="bi bi-pencil-fill"></i>
-              </button>
-              <button class="btn btn-sm btn-delete text-white" onclick="hapusTransaksi(${t.id})" title="Hapus">
-                <i class="bi bi-trash3-fill"></i>
-              </button>
-            ` : `
-              <span class="text-muted small">
-                <i class="bi bi-lock-fill"></i> Login untuk edit/hapus
-              </span>
-            `}
-          </td>
-        </tr>
-      `).join('');
-
-      // Keluar
-      const keluar = sorted.filter(t => t.jenis === 'keluar');
-      document.getElementById('bodyTabelKeluar').innerHTML = keluar.map((t, i) => `
-        <tr>
-          <td>${i+1}</td>
-          <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
-          <td>${t.kategori}</td>
-          <td class="text-danger">-${formatRupiah(t.nominal)}</td>
-          <td>
-            ${isAuthenticated ? `
-              <button class="btn btn-sm btn-edit text-white" onclick="editTransaksi(${t.id})" title="Edit">
-                <i class="bi bi-pencil-fill"></i>
-              </button>
-              <button class="btn btn-sm btn-delete text-white" onclick="hapusTransaksi(${t.id})" title="Hapus">
-                <i class="bi bi-trash3-fill"></i>
-              </button>
-            ` : `
-              <span class="text-muted small">
-                <i class="bi bi-lock-fill"></i> Login untuk edit/hapus
-              </span>
-            `}
-          </td>
-        </tr>
-      `).join('');
+      document.getElementById('bodyTabelSemua').innerHTML = sorted.map((t, i) => renderRow(t, i, true)).join('');
+      document.getElementById('bodyTabelMasuk').innerHTML = sorted.filter(t => t.jenis === 'masuk').map((t, i) => renderRow(t, i, false)).join('');
+      document.getElementById('bodyTabelKeluar').innerHTML = sorted.filter(t => t.jenis === 'keluar').map((t, i) => renderRow(t, i, false)).join('');
     }
 
     function switchTab(tab) {
@@ -838,25 +817,9 @@
       event.target.classList.add('active');
     }
 
-    function showAlert(type, message) {
-      const success = document.getElementById('alertSuccess');
-      const error = document.getElementById('alertError');
-      success.classList.add('d-none');
-      error.classList.add('d-none');
-
-      if (type === 'success') {
-        success.textContent = message;
-        success.classList.remove('d-none');
-        setTimeout(() => success.classList.add('d-none'), 3000);
-      } else {
-        error.textContent = message;
-        error.classList.remove('d-none');
-        setTimeout(() => error.classList.add('d-none'), 3000);
-      }
-    }
-
+    // Export & Print (tidak berubah)
     function exportCSV() {
-      if (dataTransaksi.length === 0) return showAlert('error', 'Tidak ada data untuk diekspor.');
+      if (dataTransaksi.length === 0) return showAlert('error', 'Tidak ada data.');
       let csv = 'Tanggal,Jenis,Kategori,Nominal,Keterangan\n';
       dataTransaksi.forEach(t => {
         csv += `"${t.tanggal}",${t.jenis},${t.kategori},${t.nominal},"${t.keterangan}"\n`;
@@ -865,13 +828,13 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `KAS_KATAGAWA_${new Date().toISOString().slice(0,10)}.csv`;
+      a.download = `KAS_KATAGAWA_${new Date().toISOString().slice(0, 10)}.csv`;
       a.click();
       showAlert('success', 'Laporan CSV berhasil diunduh.');
     }
 
     function printReport() {
-      if (dataTransaksi.length === 0) return showAlert('error', 'Tidak ada data untuk dicetak.');
+      if (dataTransaksi.length === 0) return showAlert('error', 'Tidak ada data.');
       const masuk = dataTransaksi.filter(t => t.jenis === 'masuk').reduce((s, t) => s + t.nominal, 0);
       const keluar = dataTransaksi.filter(t => t.jenis === 'keluar').reduce((s, t) => s + t.nominal, 0);
       const saldo = masuk - keluar;
@@ -899,9 +862,7 @@
                 <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
                 <td>${t.jenis === 'masuk' ? '✅ Masuk' : '❌ Keluar'}</td>
                 <td>${t.kategori}</td>
-                <td class="${t.jenis === 'masuk' ? 'success' : 'danger'}">
-                  ${t.jenis === 'masuk' ? '+' : '-'}${formatRupiah(t.nominal)}
-                </td>
+                <td class="${t.jenis === 'masuk' ? 'success' : 'danger'}">${t.jenis === 'masuk' ? '+' : '-'}${formatRupiah(t.nominal)}</td>
                 <td>${t.keterangan}</td>
               </tr>
             `).join('')}
@@ -913,9 +874,22 @@
       win.print();
     }
 
+    // 🔁 Listen to Firebase DB changes in real-time
+    transaksiRef.on('value', (snapshot) => {
+      dataTransaksi = [];
+      snapshot.forEach(child => {
+        dataTransaksi.push({ ...child.val(), id: child.key });
+      });
+      updateStatistik();
+      updateTabel();
+    }, (error) => {
+      console.error('Firebase error:', error);
+      showAlert('error', 'Gagal memuat data dari server.');
+    });
+
     // Init
-    loadData();
     checkAuth();
+    document.getElementById('tanggal').valueAsDate = new Date();
   </script>
 
 </body>
