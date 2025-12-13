@@ -125,6 +125,57 @@
       font-size: 1.1rem;
     }
   }
+
+  /* Styling untuk foto anggota tim - ukuran dan border yang konsisten */
+  .team .person figure {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #024106;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team .person img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+  }
+
+  .team .person:hover img {
+    transform: scale(1.05);
+  }
+
+  .team .person:hover figure {
+    box-shadow: 0 6px 16px rgba(2, 65, 6, 0.3);
+    border-color: #012d04;
+  }
+
+  /* Responsive untuk mobile */
+  @media (max-width: 768px) {
+    .team .person figure {
+      width: 180px;
+      height: 180px;
+      border-width: 3px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .team .person figure {
+      width: 150px;
+      height: 150px;
+      border-width: 3px;
+      margin-bottom: 15px;
+    }
+  }
 </style>
 
 <body class="index-page">
@@ -133,18 +184,17 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/KATAGAWA.png" alt="Kartarlogo" class="img-fluid w-30">KARANG TARUNA RW 12
-        <!-- <h1 class="sitename">AgriCulture</h1>  -->
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="services.html" class="active">Our Team</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html">Halaman Utama</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="services.html" class="active">Tim Kami</a></li>
+          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="Kas.html">Kas</a></li>
+          <li><a href="contact.html">Kontak</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -164,8 +214,8 @@
 
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Team</li>
+            <li><a href="index.html">Halaman Utama</a></li>
+            <li class="current">Tim Kami</li>
           </ol>
         </nav>
       </div>
@@ -256,7 +306,7 @@
           <div class="col-lg-2 col-md-6 mb-4">
             <div class="person">
               <figure>
-                <img src="assets/img/team/Rawr.JPG" alt="Image" class="img-fluid">
+                <img src="assets/img/team/Andy Setiawan.jpeg" alt="Andy Setiawan" class="img-fluid" onerror="this.src='assets/img/team/Rawr.JPG'">
                 <div class="social">
                 </div>
               </figure>
@@ -270,7 +320,7 @@
           <div class="col-lg-2 col-md-6 mb-4">
             <div class="person">
               <figure>
-                <img src="assets/img/team/user.png" alt="Image" class="img-fluid">
+                <img src="assets/img/team/Adhipramana Putra.jpg" alt="Adhipramana Putra" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
                 <div class="social">
                 </div>
               </figure>
@@ -284,7 +334,7 @@
           <div class="col-lg-2 col-md-6 mb-4">
             <div class="person">
               <figure>
-                <img src="assets/img/team/user.png" alt="Image" class="img-fluid">
+                <img src="assets/img/team/Safira Azzahra.jpg" alt="Safira Azzahra" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
                 <div class="social">
                 </div>
               </figure>
@@ -312,7 +362,7 @@
           <div class="col-lg-2 col-md-6 mb-4">
             <div class="person">
               <figure>
-                <img src="assets/img/team/user.png" alt="Image" class="img-fluid">
+                <img src="assets/img/team/naylaa.jpg" alt="Hasnayla Embun" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
                 <div class="social">
                 </div>
               </figure>
@@ -326,7 +376,7 @@
           <div class="col-lg-2 col-md-6 mb-4">
             <div class="person">
               <figure>
-                <img src="assets/img/team/user.png" alt="Image" class="img-fluid">
+                <img src="assets/img/team/Yafia Finanda.jpeg" alt="Yafia Finanda" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
                 <div class="social">
                 </div>
               </figure>
@@ -340,6 +390,122 @@
         </div>
       </div>
       </div>
+
+      <!-- Section Anggota Karang Taruna -->
+      <div class="content">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Anggota Karang Taruna RW 12</h2>
+          
+          <div class="row">
+            <!-- Aprodhite Kenzie -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+              <div class="person">
+                <figure>
+                  <img src="assets/img/team/Aprodhite Kenzie.jpg" alt="Aprodhite Kenzie" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
+                  <div class="social">
+                  </div>
+                </figure>
+                <div class="person-contents">
+                  <span class="position">Anggota</span>
+                  <h3>Aprodhite Kenzie</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- NATANAEL TR -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+              <div class="person">
+                <figure>
+                  <img src="assets/img/team/NATANAEL TR.jpg" alt="NATANAEL TR" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
+                  <div class="social">
+                  </div>
+                </figure>
+                <div class="person-contents">
+                  <span class="position">Anggota</span>
+                  <h3>NATANAEL TR</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- RefaliaNH -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+              <div class="person">
+                <figure>
+                  <img src="assets/img/team/RefaliaNH.jpg" alt="RefaliaNH" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
+                  <div class="social">
+                  </div>
+                </figure>
+                <div class="person-contents">
+                  <span class="position">Anggota</span>
+                  <h3>RefaliaNH</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sach Ratu Sita -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+              <div class="person">
+                <figure>
+                  <img src="assets/img/team/Sach Ratu Sita.jpg" alt="Sach Ratu Sita" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
+                  <div class="social">
+                  </div>
+                </figure>
+                <div class="person-contents">
+                  <span class="position">Anggota</span>
+                  <h3>Sach Ratu Sita</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sefian Dwi -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+              <div class="person">
+                <figure>
+                  <img src="assets/img/team/Sefian Dwi.jpg" alt="Sefian Dwi" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
+                  <div class="social">
+                  </div>
+                </figure>
+                <div class="person-contents">
+                  <span class="position">Anggota</span>
+                  <h3>Sefian Dwi</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Teuku -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+              <div class="person">
+                <figure>
+                  <img src="assets/img/team/Teuku.jpg" alt="Teuku" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
+                  <div class="social">
+                  </div>
+                </figure>
+                <div class="person-contents">
+                  <span class="position">Anggota</span>
+                  <h3>Teuku</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tobhie Kristian -->
+            <div class="col-lg-2 col-md-4 col-sm-6 mb-4">
+              <div class="person">
+                <figure>
+                  <img src="assets/img/team/Tobhie Kristian.jpg" alt="Tobhie Kristian" class="img-fluid" onerror="this.src='assets/img/team/user.png'">
+                  <div class="social">
+                  </div>
+                </figure>
+                <div class="person-contents">
+                  <span class="position">Anggota</span>
+                  <h3>Tobhie Kristian</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Section Anggota -->
+
     </section>
     <!-- /Team Section -->
 
@@ -374,7 +540,7 @@
             © Copyright <strong><span>KATAGAWA</span></strong>. All Rights Reserved
           </div>
           <div class="credits">
-            Designed by <a href="https://github.com/">T</a>
+            Designed by <a href="https://github.com/titanadhitya16">T</a>
           </div>
         </div>
   
