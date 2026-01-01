@@ -8,24 +8,20 @@
   <meta name="description" content="Laporan Keuangan Karang Taruna RW 12">
   <meta name="keywords" content="kas, keuangan, karang taruna, laporan">
 
-  <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap"
     rel="stylesheet">
 
-  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
-  <!-- Main CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
 
   <style>
@@ -205,7 +201,7 @@
     }
 
     .table {
-      font-size: 0.95rem;
+      font-size: 0.90rem; /* Sedikit dikecilkan agar muat banyak kolom */
       border-collapse: separate;
       border-spacing: 0;
     }
@@ -214,14 +210,16 @@
       background-color: #024106;
       color: white;
       border: none;
-      padding: 12px 15px;
+      padding: 12px 10px;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .table td {
       border: none;
       border-bottom: 1px solid #e9ecef;
-      padding: 12px 15px;
+      padding: 12px 10px;
+      vertical-align: middle;
     }
 
     .table tbody tr:last-child td {
@@ -249,12 +247,17 @@
     .btn-delete:hover {
       background-color: #c82333;
     }
+    
+    /* Responsive Table Adjustments */
+    @media (max-width: 768px) {
+        .table { font-size: 0.8rem; }
+        .table th, .table td { padding: 8px 5px; }
+    }
   </style>
 </head>
 
 <body class="kas-page">
 
-  <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center position-fixed top-0 w-100">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
@@ -276,15 +279,11 @@
       </nav>
 
     </div>
-  </header><!-- End Header -->
+  </header><main class="main">
 
-  <main class="main">
-
-    <!-- ======= Kas Section ======= -->
     <section id="kas" class="section py-5">
       <div class="container">
 
-        <!-- Section Title -->
         <div class="row justify-content-center">
           <div class="col-lg-8 text-center mb-5" data-aos="fade-up">
             <h2 class="display-5 mb-3">Laporan Keuangan Kas</h2>
@@ -303,7 +302,6 @@
           </div>
         </div>
 
-        <!-- Statistik -->
         <div class="row g-4 mb-5" data-aos="fade-up">
           <div class="col-lg-4 col-md-6">
             <div class="stat-box masuk shadow-sm">
@@ -335,8 +333,7 @@
         </div>
 
         <div class="row g-4">
-          <!-- Form Input -->
-          <div class="col-lg-5">
+          <div class="col-lg-4">
             <div class="card p-4 h-100">
               <div class="d-flex align-items-center mb-4">
                 <div class="service-item-icon me-3">
@@ -347,6 +344,14 @@
 
               <div class="alert alert-success d-none" id="alertSuccess"></div>
               <div class="alert alert-danger d-none" id="alertError"></div>
+
+              <div class="mb-3">
+                <label class="form-label">Nama Penginput</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    <input type="text" id="penginput" class="form-control" placeholder="Nama Anda" required>
+                </div>
+              </div>
 
               <div class="mb-3">
                 <label class="form-label">Jenis Transaksi</label>
@@ -395,8 +400,7 @@
             </div>
           </div>
 
-          <!-- Data & Tabel -->
-          <div class="col-lg-7">
+          <div class="col-lg-8">
             <div class="card p-4 h-100">
               <div class="d-flex align-items-center mb-4">
                 <div class="service-item-icon me-3">
@@ -405,7 +409,6 @@
                 <h3 class="mb-0">Riwayat Transaksi</h3>
               </div>
 
-              <!-- Tabs -->
               <ul class="nav nav-tabs mb-4" role="tablist">
                 <li class="nav-item" role="presentation">
                   <button class="nav-link active tab-btn" data-bs-target="#semua" type="button" role="tab"
@@ -431,6 +434,8 @@
                           <th>Tanggal</th>
                           <th>Jenis</th>
                           <th>Nominal</th>
+                          <th>Keterangan</th>
+                          <th>Oleh</th>
                           <th>Aksi</th>
                         </tr>
                       </thead>
@@ -448,6 +453,8 @@
                           <th>Tanggal</th>
                           <th>Kategori</th>
                           <th>Nominal</th>
+                          <th>Keterangan</th>
+                          <th>Oleh</th>
                           <th>Aksi</th>
                         </tr>
                       </thead>
@@ -465,6 +472,8 @@
                           <th>Tanggal</th>
                           <th>Kategori</th>
                           <th>Nominal</th>
+                          <th>Keterangan</th>
+                          <th>Oleh</th>
                           <th>Aksi</th>
                         </tr>
                       </thead>
@@ -476,7 +485,6 @@
             </div>
           </div>
 
-          <!-- Export -->
           <div class="col-12">
             <div class="card p-4">
               <div class="d-flex align-items-center mb-3">
@@ -502,7 +510,6 @@
 
   </main>
 
-  <!-- Login Modal -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -538,7 +545,6 @@
     </div>
   </div>
 
-  <!-- ======= Footer ======= -->
   <footer id="footer" class="footer dark-background">
     <div class="footer-top">
       <div class="container">
@@ -571,17 +577,14 @@
     </div>
   </footer>
 
-  <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
     <i class="bi bi-arrow-up-circle-fill"></i>
   </a>
 
-  <!-- Vendor JS -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/js/main.js"></script>
 
-  <!-- 🔥 Firebase SDK (CDN - No npm needed for GitHub Pages!) -->
   <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-database-compat.js"></script>
 
@@ -634,6 +637,7 @@
     }
 
     function clearForm() {
+      document.getElementById('penginput').value = ''; // Reset nama penginput
       document.getElementById('jenisTrans').value = '';
       document.getElementById('nominal').value = '';
       document.getElementById('kategori').value = '';
@@ -706,20 +710,22 @@
 
     // === Firebase CRUD ===
     function tambahTransaksi() {
+      const penginput = document.getElementById('penginput').value; // Ambil nilai penginput
       const jenis = document.getElementById('jenisTrans').value;
       const nominal = parseInt(document.getElementById('nominal').value);
       const kategori = document.getElementById('kategori').value;
       const keterangan = document.getElementById('keterangan').value;
       const tanggal = document.getElementById('tanggal').value;
 
-      if (!jenis || !nominal || !kategori || !tanggal) {
-        return showAlert('error', 'Semua field harus diisi!');
+      if (!penginput || !jenis || !nominal || !kategori || !tanggal) {
+        return showAlert('error', 'Semua field (termasuk Nama Penginput) harus diisi!');
       }
       if (nominal <= 0) {
         return showAlert('error', 'Nominal harus lebih dari 0!');
       }
 
-      const transaksi = { jenis, nominal, kategori, keterangan, tanggal };
+      // Simpan object dengan field baru: penginput
+      const transaksi = { penginput, jenis, nominal, kategori, keterangan, tanggal };
 
       if (editingId) {
         transaksiRef.child(editingId).update(transaksi)
@@ -744,6 +750,7 @@
       }
       const t = dataTransaksi.find(t => t.id === id);
       if (t) {
+        document.getElementById('penginput').value = t.penginput || ''; // Isi nama penginput
         document.getElementById('jenisTrans').value = t.jenis;
         document.getElementById('nominal').value = t.nominal;
         document.getElementById('kategori').value = t.kategori;
@@ -792,6 +799,9 @@
           <td class="${t.jenis === 'keluar' ? 'text-danger' : 'text-success'}">
             ${t.jenis === 'keluar' ? '-' : '+'}${formatRupiah(t.nominal)}
           </td>
+          <td>${t.keterangan ? t.keterangan : '<span class="text-muted">-</span>'}</td>
+          <td><span class="badge bg-light text-dark border"><i class="bi bi-person"></i> ${t.penginput || 'Anonim'}</span></td>
+          
           <td>
             ${isAuthenticated ? `
               <button class="btn btn-sm btn-edit text-white" onclick="editTransaksi('${t.id}')" title="Edit">
@@ -800,7 +810,7 @@
               <button class="btn btn-sm btn-delete text-white" onclick="hapusTransaksi('${t.id}')" title="Hapus">
                 <i class="bi bi-trash3-fill"></i>
               </button>
-            ` : `<span class="text-muted small"><i class="bi bi-lock-fill"></i> Login untuk edit/hapus</span>`}
+            ` : `<span class="text-muted small"><i class="bi bi-lock-fill"></i> Login untuk edit</span>`}
           </td>
         </tr>
       `;
@@ -817,12 +827,15 @@
       event.target.classList.add('active');
     }
 
-    // Export & Print (tidak berubah)
+    // Export & Print (Updated dengan kolom Penginput & Keterangan)
     function exportCSV() {
       if (dataTransaksi.length === 0) return showAlert('error', 'Tidak ada data.');
-      let csv = 'Tanggal,Jenis,Kategori,Nominal,Keterangan\n';
+      let csv = 'Tanggal,Oleh,Jenis,Kategori,Nominal,Keterangan\n';
       dataTransaksi.forEach(t => {
-        csv += `"${t.tanggal}",${t.jenis},${t.kategori},${t.nominal},"${t.keterangan}"\n`;
+        // Handle undefined penginput/keterangan agar CSV rapi
+        const penginputSafe = t.penginput || '-';
+        const ketSafe = t.keterangan ? t.keterangan.replace(/(\r\n|\n|\r)/gm, " ") : '-';
+        csv += `"${t.tanggal}","${penginputSafe}",${t.jenis},${t.kategori},${t.nominal},"${ketSafe}"\n`;
       });
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
@@ -839,39 +852,53 @@
       const keluar = dataTransaksi.filter(t => t.jenis === 'keluar').reduce((s, t) => s + t.nominal, 0);
       const saldo = masuk - keluar;
 
-      const win = window.open('', '', 'width=900,height=600');
+      const win = window.open('', '', 'width=1000,height=700');
       win.document.write(`
         <html><head><title>Laporan Kas - KATAGAWA</title>
-        <style>body{font-family:Arial,sans-serif;padding:20px;}
-        h2{text-align:center;color:#024106;} .summary{width:100%;border-collapse:collapse;margin:20px 0;}
-        .summary td,.summary th{border:1px solid #ddd;padding:10px;} .success{color:green;} .danger{color:red;}
+        <style>
+            body{font-family:Arial,sans-serif;padding:20px; font-size: 12px;}
+            h2{text-align:center;color:#024106;} 
+            .summary{width:100%;border-collapse:collapse;margin:20px 0;}
+            .summary td,.summary th{border:1px solid #ddd;padding:8px; text-align: left;} 
+            .success{color:green;} .danger{color:red;}
+            th { background-color: #f2f2f2; }
         </style></head><body>
         <h2>LAPORAN KEUANGAN KAS</h2>
         <p style="text-align:center">Karang Taruna RW 12 | ${new Date().toLocaleDateString('id-ID')}</p>
-        <table class="summary">
+        <table class="summary" style="width: 50%; margin: 0 auto 20px auto;">
           <tr><th>Kas Masuk</th><td class="success">+${formatRupiah(masuk)}</td></tr>
           <tr><th>Kas Keluar</th><td class="danger">-${formatRupiah(keluar)}</td></tr>
           <tr><th><b>Saldo Akhir</b></th><td><b>${formatRupiah(saldo)}</b></td></tr>
         </table>
         <h3>Rincian Transaksi</h3>
         <table class="summary">
-          <thead><tr><th>Tanggal</th><th>Jenis</th><th>Kategori</th><th>Nominal</th><th>Keterangan</th></tr></thead>
+          <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Oleh</th>
+                <th>Jenis</th>
+                <th>Kategori</th>
+                <th>Nominal</th>
+                <th>Keterangan</th>
+            </tr>
+          </thead>
           <tbody>
             ${dataTransaksi.map(t => `
               <tr>
                 <td>${new Date(t.tanggal).toLocaleDateString('id-ID')}</td>
+                <td>${t.penginput || '-'}</td>
                 <td>${t.jenis === 'masuk' ? '✅ Masuk' : '❌ Keluar'}</td>
                 <td>${t.kategori}</td>
                 <td class="${t.jenis === 'masuk' ? 'success' : 'danger'}">${t.jenis === 'masuk' ? '+' : '-'}${formatRupiah(t.nominal)}</td>
-                <td>${t.keterangan}</td>
+                <td>${t.keterangan || '-'}</td>
               </tr>
             `).join('')}
           </tbody>
         </table>
+        <script>window.print();<\/script>
         </body></html>
       `);
       win.document.close();
-      win.print();
     }
 
     // 🔁 Listen to Firebase DB changes in real-time
